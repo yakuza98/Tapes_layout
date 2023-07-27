@@ -1,0 +1,93 @@
+@import "variables/_variables.scss";
+@import "mixins/_mixins.scss";
+
+.footer {
+  padding: 64px 0;
+
+  text-align: center;
+  background-color: $background-vanilla;
+
+  @include centered-row;
+
+  &__inner-img {
+    margin-bottom: $standard-indent-size;
+    cursor: pointer;
+  }
+
+  &__menu-list {
+    display: flex;
+    gap: 46px;
+    margin-bottom: 28px;
+    font-size: $small-font-size;
+    font-weight: 600;
+    line-height: medim-font-height;
+    color: var(--text-desc);
+  }
+
+  &__menu-link {
+    transition: color 0.1s ease;
+  }
+
+  &__menu-link:hover {
+    color: $yellow;
+  }
+
+  &__social {
+    display: flex;
+    gap: $standard-indent-size;
+    margin-bottom: 28px;
+    justify-content: center;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__contacts-link {
+    font-size: $small-font-size;
+    line-height: $small-font-height;
+    font-family: $exo-font-family;
+     
+    @include title-text-700;
+  }
+
+  &__contacts-email {
+    color: var(--text-desc);
+
+    @include desc-text-400;
+  }
+}
+svg:hover {
+  path {
+    fill: $yellow;
+  }
+
+  .text {
+    fill: white;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .footer {
+    padding: 64px 0 32px;
+  }
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .underline::after {
+    height: 9px;
+    bottom: 3px;
+  }
+}
